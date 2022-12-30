@@ -1,0 +1,33 @@
+E:\Hoc\RevitApi\Exam-HTT\Exam\bin\x64\Debug\Exam.dll
+E:\Hoc\RevitApi\Exam-HTT\Exam\bin\x64\Debug\Exam.pdb
+E:\Hoc\RevitApi\Exam-HTT\Exam\bin\x64\Debug\RevitAPI.dll
+E:\Hoc\RevitApi\Exam-HTT\Exam\bin\x64\Debug\RevitAPIUI.dll
+E:\Hoc\RevitApi\Exam-HTT\Exam\obj\x64\Debug\Exam.csprojResolveAssemblyReference.cache
+E:\Hoc\RevitApi\Exam-HTT\Exam\obj\x64\Debug\Exam.dll
+E:\Hoc\RevitApi\Exam-HTT\Exam\obj\x64\Debug\Exam.pdb
+D:\Kien\Study\Revit Api\Exam-HTT\Exam\obj\x64\Debug\Model\Form\CreateRebarForm.g.cs
+D:\Kien\Study\Revit Api\Exam-HTT\Exam\obj\x64\Debug\Exam_MarkupCompile.cache
+D:\Kien\Study\Revit Api\Exam-HTT\Exam\obj\x64\Debug\Exam_MarkupCompile.lref
+D:\Kien\Study\Revit Api\Exam-HTT\Exam\bin\x64\Debug\Exam.dll
+D:\Kien\Study\Revit Api\Exam-HTT\Exam\bin\x64\Debug\Exam.pdb
+D:\Kien\Study\Revit Api\Exam-HTT\Exam\bin\x64\Debug\RevitAPI.dll
+D:\Kien\Study\Revit Api\Exam-HTT\Exam\bin\x64\Debug\RevitAPIUI.dll
+D:\Kien\Study\Revit Api\Exam-HTT\Exam\obj\x64\Debug\Exam.csprojResolveAssemblyReference.cache
+D:\Kien\Study\Revit Api\Exam-HTT\Exam\obj\x64\Debug\Model\Form\CreateRebarForm.baml
+D:\Kien\Study\Revit Api\Exam-HTT\Exam\obj\x64\Debug\Exam.g.resources
+D:\Kien\Study\Revit Api\Exam-HTT\Exam\obj\x64\Debug\Exam.dll
+D:\Kien\Study\Revit Api\Exam-HTT\Exam\obj\x64\Debug\Exam.pdb
+D:\1. Work\Exam-HTT\Exam\bin\x64\Debug\Exam.dll
+D:\1. Work\Exam-HTT\Exam\bin\x64\Debug\Exam.pdb
+D:\1. Work\Exam-HTT\Exam\bin\x64\Debug\RevitAPI.dll
+D:\1. Work\Exam-HTT\Exam\bin\x64\Debug\RevitAPIUI.dll
+D:\1. Work\Exam-HTT\Exam\obj\x64\Debug\Exam.csprojAssemblyReference.cache
+D:\1. Work\Exam-HTT\Exam\obj\x64\Debug\Model\Form\CreateRebarForm.g.cs
+D:\1. Work\Exam-HTT\Exam\obj\x64\Debug\Exam_MarkupCompile.cache
+D:\1. Work\Exam-HTT\Exam\obj\x64\Debug\Exam_MarkupCompile.lref
+D:\1. Work\Exam-HTT\Exam\obj\x64\Debug\Model\Form\CreateRebarForm.baml
+D:\1. Work\Exam-HTT\Exam\obj\x64\Debug\Exam.g.resources
+D:\1. Work\Exam-HTT\Exam\obj\x64\Debug\Exam.csproj.CoreCompileInputs.cache
+D:\1. Work\Exam-HTT\Exam\obj\x64\Debug\Exam.csproj.CopyComplete
+D:\1. Work\Exam-HTT\Exam\obj\x64\Debug\Exam.dll
+D:\1. Work\Exam-HTT\Exam\obj\x64\Debug\Exam.pdb

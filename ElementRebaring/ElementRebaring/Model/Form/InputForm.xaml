@@ -1,0 +1,183 @@
+﻿<Window x:Class="Model.Form.InputForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Model.Form"
+             mc:Ignorable="d" Width="1055.921" Height="592.16">
+    <Grid Margin="1,0,33,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <GroupBox Header="Element" HorizontalAlignment="Left" Height="147" Margin="25,16,0,0" VerticalAlignment="Top" Width="281" FontSize="15">
+            <Grid DataContext="{Binding ElementView.EttElement.Identify}" Margin="0,0,-32,-34" Grid.ColumnSpan="2">
+                <Button Content="Select Element" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Width="118" Margin="72,98,0,0" Height="20" Click="SelectElement_Click"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="72,10,0,0" TextWrapping="Wrap" 
+                     FontSize="15" Text="{Binding Type}" VerticalAlignment="Top" Width="100"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="72,38,0,0" TextWrapping="Wrap" 
+                FontSize="15" Text="{Binding Name}" VerticalAlignment="Top" Width="100"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="72,67,0,0" TextWrapping="Wrap" 
+                FontSize="15" Text="{Binding Level}" VerticalAlignment="Top" Width="100"/>
+                <Label Content="Type" HorizontalAlignment="Left" Margin="18,6,0,0" VerticalAlignment="Top" FontSize="15" Height="30" Width="41"/>
+                <Label Content="Name" HorizontalAlignment="Left" Margin="20,33,0,0" VerticalAlignment="Top" FontSize="15" Height="30" Width="50"/>
+                <Label Content="Level" HorizontalAlignment="Left" Margin="19,61,0,0" VerticalAlignment="Top" FontSize="15" Height="30" Width="44" RenderTransformOrigin="-6.25,5.55"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Setting" HorizontalAlignment="Left" Height="247" Margin="23,168,0,0" VerticalAlignment="Top" Width="286" FontSize="15">
+            <Grid DataContext="{Binding SettingView}">
+                <Label Content="Concrete Cover:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <Label Content="Layer Distance:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
+                <Label Content="Ratio for Top Add Rebar:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+                <Label Content="Ratio for Bot Add Rebar:" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top"/>
+                <Label Content="Ratio for Array Stirrup:" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top"/>
+                <Label Content="Offset From Edge Stirrup:" HorizontalAlignment="Left" Margin="10,161,0,0" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="205,17,0,0" TextWrapping="Wrap" 
+                    FontSize="15" Text="{Binding ConcreteCoverMM}" VerticalAlignment="Top" Width="55"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="205,47,0,0" TextWrapping="Wrap" 
+                    FontSize="15" Text="{Binding LayerDistanceMM}" VerticalAlignment="Top" Width="55"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="205,77,0,0" TextWrapping="Wrap" 
+                    FontSize="15" Text="{Binding TopReinforcedLayerLengthRatio}" VerticalAlignment="Top" Width="55"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="205,112,0,0" TextWrapping="Wrap" 
+                    FontSize="15" Text="{Binding BottomReinforcedLayerLengthRatio}" VerticalAlignment="Top" Width="55"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="205,140,0,0" TextWrapping="Wrap" 
+                    FontSize="15" Text="{Binding StirrupArrayLengthRatio}" VerticalAlignment="Top" Width="55"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="205,168,0,0" TextWrapping="Wrap" 
+                    FontSize="15" Text="{Binding OffsetStirrupFromEdgeMM}" VerticalAlignment="Top" Width="55"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Longitudinal Rebar" HorizontalAlignment="Left" Height="264" Margin="319,14,-14,0" VerticalAlignment="Top" Width="709" FontSize="15" Grid.ColumnSpan="2">
+            <Grid Margin="0,0,-38,0">
+                <DataGrid HorizontalAlignment="Left" Height="218" Margin="10,10,0,0" VerticalAlignment="Top" Width="590"
+                          ItemsSource="{Binding RebarViews}"
+                          CanUserAddRows="False"
+                          CanUserDeleteRows="False"
+                          AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Rebar Layer" MinWidth="80">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox ItemsSource="{Binding RebarLayers}"
+                                              SelectedItem="{Binding Rebar.RebarLayer,UpdateSourceTrigger=PropertyChanged}">
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Layer Index" MinWidth="80" Binding="{Binding Rebar.LayerIndex}"></DataGridTextColumn>
+                        <DataGridTemplateColumn Header="Rebar Function" MinWidth="80">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox ItemsSource="{Binding RebarFunctions}"
+                                              SelectedItem="{Binding Rebar.RebarFunction,UpdateSourceTrigger=PropertyChanged}">
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Quantity" MinWidth="80" Binding="{Binding Rebar.Quantity}" ></DataGridTextColumn>
+                        <DataGridTemplateColumn Header="Diameter" MinWidth="80">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox ItemsSource="{Binding  RebarBarTypes}"
+                                              SelectedItem="{Binding Rebar.RebarBarType,UpdateSourceTrigger=PropertyChanged}"
+                                              DisplayMemberPath="Name"
+                                              >
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Hook" MinWidth="80">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding Rebar.HasHook}"
+                                              >
+
+                                    </CheckBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Delete" Click="DeleterRebars_Click"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+                <Button Content="Add Rebar" VerticalAlignment="Top" Margin="605,28,42,0" Height="20" Click="AddRebar_Click"/>
+
+            </Grid>
+
+        </GroupBox>
+        <GroupBox Header="Stirrup" HorizontalAlignment="Left" Height="169" VerticalAlignment="Top" Width="709" Margin="319,278,-14,0" FontSize="15" Grid.ColumnSpan="2">
+            <Grid>
+                <DataGrid HorizontalAlignment="Left" Height="186" Margin="10,10,0,0" VerticalAlignment="Top" Width="514"
+                          ItemsSource="{Binding StirrupViews}"
+                          CanUserAddRows="False"
+                          CanUserDeleteRows="False"
+                          AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Stirrup Function" MinWidth="80">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox ItemsSource="{Binding StirrupFunctions}"
+                                              SelectedItem="{Binding Stirrup.StirrupFunction,UpdateSourceTrigger=PropertyChanged}">
+
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Stirrup Position" MinWidth="80">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox
+                                        ItemsSource="{Binding StirrupPositions}"
+                                        SelectedItem="{Binding Stirrup.StirrupPosition,UpdateSourceTrigger=PropertyChanged}">
+
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Diameter" MinWidth="80">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox
+                                        ItemsSource="{Binding RebarBarTypes}"
+                                        SelectedItem="{Binding Stirrup.RebarBarType,UpdateSourceTrigger=PropertyChanged}"
+                                        DisplayMemberPath="Name">
+
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Spacing" MinWidth="80" Binding="{Binding SpacingMM}"></DataGridTextColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button
+                                        Content="Delete" Click="DeleterStirrup_Click">
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Content="Add Stirrup" VerticalAlignment="Top" Margin="588,28,15,0" Height="20" Click="AddStirrup_Click"/>
+            </Grid>
+        </GroupBox>
+        <Button Content="Create Rebars" HorizontalAlignment="Left" VerticalAlignment="Top" Width="123" Margin="449,482,0,0" FontSize="15" Click="CreateRebars_Click"/>
+        <GroupBox Grid.Column="1" Header="GroupBox" HorizontalAlignment="Left" Height="100" Margin="173,44,-273,0" VerticalAlignment="Top" Width="100"/>
+
+
+
+
+
+    </Grid>
+</Window>
